@@ -11,16 +11,39 @@ Contoh:
 
 Code
 */
-function kaliTerusRekursif(angka) {
-    // you can only write your code here!
-    const strNum = String(angka);
+// function kaliTerusRekursif(angka) {
+//     // you can only write your code here!
+//     const strNum = String(angka);
 
-    if (strNum.length === 1) return Number(strNum);
+//     if (strNum.length === 1) return Number(strNum);
     
-    const firstNum = strNum[0];
-    const number = strNum.slice(1);
+//     const firstNum = strNum[0];
+//     const number = strNum.slice(1);
 
-    return kaliTerusRekursif(Number(firstNum) * kaliTerusRekursif(Number(number)));
+//     return kaliTerusRekursif(Number(firstNum) * kaliTerusRekursif(Number(number)));
+// }
+
+// // TEST CASES
+// console.log(kaliTerusRekursif(66)); // 8
+// console.log(kaliTerusRekursif(3)); // 3
+// console.log(kaliTerusRekursif(24)); // 8
+// console.log(kaliTerusRekursif(654)); // 0
+// console.log(kaliTerusRekursif(1231)); // 6
+
+//cara lain
+
+function kaliTerusRekursif(angka) {
+  if(angka < 10){
+    return angka
+  }
+  
+  var arr = String(angka);
+  var newAngka = 1;
+  for (var i = 0; i < arr.length; i++){
+    newAngka = newAngka * Number(arr[i])
+  }
+  // console.log(newAngka)
+  return kaliTerusRekursif(newAngka)
 }
 
 // TEST CASES
